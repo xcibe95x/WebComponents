@@ -7,8 +7,18 @@ template.innerHTML = `
     .user-card {
         background: grey;
         border-radius: 8px;
+        margin: 10px;
+    }
+
+    .user-avatar {
+        padding: 20px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
+    }
+    .user-avatar img{
+        border-radius: 50%;
     }
 </style>
 
