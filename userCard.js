@@ -8,22 +8,30 @@ template.innerHTML = `
         background: grey;
         border-radius: 8px;
         margin: 10px;
+        min-width: 200px;
+        border: 1px solid black;
     }
 
-    .user-avatar {
+    .user-content {
         padding: 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        font-family: sans-serif;
+        font-size: 14px;
+        text-align: center;
+
     }
-    .user-avatar img{
+
+    .user-content img {
         border-radius: 50%;
+        border: 4px solid black;
     }
 </style>
 
 <div class="user-card">
-<div class="user-avatar">
+<div class="user-content">
 <img />
     <h3>Jhon Doe</h3>
     <div class="info">
@@ -58,6 +66,8 @@ class UserCard extends HTMLElement {
         // Attribute example without Shadow DOM: this.innerHTML = `${this.getAttribute('name')}`;
     }
 
+
+    // Toggle Card Informations
     toggleInfo() {
         this.showInfo = !this.showInfo;
 
@@ -73,6 +83,8 @@ class UserCard extends HTMLElement {
         }
     }
 
+
+    // Callbacks for the Toggle
     connectedCallback() {
         this.shadowRoot.querySelector('#toggle-info')
         .addEventListener('click', () => this.toggleInfo());
