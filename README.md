@@ -83,7 +83,22 @@ window.customElements.define('my-button', MyButton, {extends: 'button'});
 
 However you should be aware, that customized built in elements are not supported well by all browsers, see webkit bug: https://bugs.webkit.org/show_bug.cgi?id=182671
 
-You are now ready to move to Polymer, Lit or whatever you are gonna use for making Web Components! Goodluck.
+### Thigns to Know
+The custom element tag must be composed by two words separated by a dash.
+``` html
+<!-- This will Work -->
+<lit-button><lit-button>
+<!-- This will Throw an Error -->
+<button><button>
+```
+The this keyword in the Class, will refer to the element the class is made for so if you are in the class LitButton, the this keyword in a console log will return
+``` html
+<lit-button><lit-button>
+```
+Making the components without a Shadow Root will expose the <lit-button> element in the DOM, and it will be targettable in css, however we want to incapsulate our components, so we use the ShadowRoot, you can then decide to set the mode to open or close, doing so will make it possible or impossible to access and edit the component from outside.
+You can also add the delegateFocus: true under mode, so the component can gain focus in the browser.
+
+You are now ready to move to Polymer, Lit or whatever you are gonna use for making Web Components! Goodluck, and don't forget to checkk the videos below!
 
 # Sources
 Crash Course, from which i made this repo, very fast and to the point
@@ -92,6 +107,8 @@ By Traversy Media: https://www.youtube.com/watch?v=PCWaFLy3VUo
 Intersting Tips from a Google Developer
 By Google Chrome Developers: https://www.youtube.com/watch?v=zfQoleQEa4w
 
+This is a Must Watch to learn more about the Web Components
+By Before Semicolon: https://www.youtube.com/watch?v=PFpUCnyztJk
 
-https://www.youtube.com/watch?v=PFpUCnyztJk
+You might also be interested in learning what Polyfill means when approaching Web Components: https://it.wikipedia.org/wiki/Polyfill
 
