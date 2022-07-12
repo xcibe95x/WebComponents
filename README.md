@@ -1,7 +1,7 @@
 # Web Components
 
 ## Why i made this repo?
-I need to quickly learn about Web Components, so i decided to share my researches and examples about it.
+I need to quickly learn about Web Components, so i decided to share my researches and the simple example about it.
 
 ## What are Web Components?
 Set of web platform API's that allow us to create custom reusable and encapsulated html tags to use in web pages and web apps
